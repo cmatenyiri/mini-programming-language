@@ -1,0 +1,49 @@
+/* Show code exactly as typed: no programming ligatures (-> => |> would otherwise render as arrows). */
+* {
+  font-variant-ligatures: none;
+  font-feature-settings:
+    'calt' 0,
+    'liga' 0;
+}
+
+.lumen-separator {
+  position: relative;
+  flex-shrink: 0;
+  background: rgba(148, 160, 255, 0.1);
+  outline: none;
+  transition:
+    background 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.lumen-separator-h {
+  width: 1px;
+}
+
+.lumen-separator-v {
+  height: 1px;
+}
+
+.lumen-separator::after {
+  content: '';
+  position: absolute;
+  inset: 0 -4px;
+}
+
+.lumen-separator-v::after {
+  inset: -4px 0;
+}
+
+.lumen-separator:hover,
+.lumen-separator:focus-visible,
+.lumen-separator[data-separator='hover'],
+.lumen-separator[data-separator='active'] {
+  background: linear-gradient(180deg, #ffd36e, #ff8a5b, #b66dff);
+  box-shadow: 0 0 12px rgba(255, 138, 91, 0.6);
+}
+
+.lumen-separator-v:hover,
+.lumen-separator-v[data-separator='hover'],
+.lumen-separator-v[data-separator='active'] {
+  background: linear-gradient(90deg, #ffd36e, #ff8a5b, #b66dff);
+}
